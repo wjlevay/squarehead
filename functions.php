@@ -235,5 +235,38 @@ function bones_comments( $comment, $args, $depth ) {
 } // don't remove this bracket!
 
 
+/************* PAGE SLUG AS BODY CLASS *********************/
+
+/* 
+Set page slug as a body class (via http://timneill.net/2013/05/wordpress-add-page-slug-to-body-class-including-parents/)
+*/
+
+function add_body_class($classes) {
+    // You can modify this check so it will run on every post type
+    if (is_page()) {
+        global $post;
+        
+        // If we *do* have an ancestors list, process it
+        // http://codex.wordpress.org/Function_Reference/get_post_ancestors
+        if ($parents = get_post_ancestors($post->ID)) {
+            foreach ((array)$parents as $parent) {
+                // As the array contains IDs only, we need to get each page
+                if ($page = get_page($parent)) {
+                    // Add the current ancestor to the body class array
+                    $classes[] = "{$page->post_type}-{$page->post_name}";
+                }
+            }
+        }
+ 
+        // Add the current page to our body class array
+        $classes[] = "{$post->post_type}-{$post->post_name}";
+    }
+    
+    return $classes;
+}
+
+add_filter('body_class', 'add_body_class');
+
+
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

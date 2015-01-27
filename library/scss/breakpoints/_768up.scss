@@ -141,10 +141,15 @@ NAVIGATION STYLES
 POSTS & CONTENT STYLES
 *********************/
 
-		/* entry content */
-		.entry-content {
-			margin: 0 22.25%;
-		}
+.page-about {
+	.hentry {
+		margin: 0 22.25%;
+	}
+}
+
+	.hentry {
+		margin: 0 10% 0 22.25%;
+	}
 
 /*********************
 FOOTER STYLES

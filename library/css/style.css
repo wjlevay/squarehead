@@ -1739,9 +1739,11 @@ you can add resource intensive styles.
   /*********************
   POSTS & CONTENT STYLES
   *********************/
-  /* entry content */
-  .entry-content {
+  .page-about .hentry {
     margin: 0 22.25%; }
+
+  .hentry {
+    margin: 0 10% 0 22.25%; }
 
   /*********************
   FOOTER STYLES
