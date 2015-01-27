@@ -49,7 +49,7 @@
 				<div id="inner-header" class="wrap cf">
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-					<a id="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/SQUAREHEADlogo-sm.png"></a>
+					<a id="logo" href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>"rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/SQUAREHEADlogo.png"></a>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>
 					<?php // bloginfo('description'); ?>

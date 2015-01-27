@@ -421,12 +421,12 @@ table {
   white-space: nowrap;
   overflow: hidden; }
 
-.clearfix, .cf, .comment-respond {
+.clearfix, .cf {
   zoom: 1; }
-  .clearfix:before, .clearfix:after, .cf:before, .comment-respond:before, .cf:after, .comment-respond:after {
+  .clearfix:before, .clearfix:after, .cf:before, .cf:after {
     content: "";
     display: table; }
-  .clearfix:after, .cf:after, .comment-respond:after {
+  .clearfix:after, .cf:after {
     clear: both; }
 
 /*
@@ -501,26 +501,6 @@ The following is based of Typebase:
 https://github.com/devinhunt/typebase.css
 I've edited it a bit, but it's a nice starting point.
 */
-/*
-some nice typographical defaults
-more here: http://www.newnet-soft.com/blog/csstypography
-*/
-p {
-  -ms-word-wrap: break-word;
-  word-break: break-word;
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-  -webkit-hyphenate-before: 2;
-  -webkit-hyphenate-after: 3;
-  hyphenate-lines: 3;
-  -webkit-font-feature-settings: "liga", "dlig";
-  -moz-font-feature-settings: "liga=1, dlig=1";
-  -ms-font-feature-settings: "liga", "dlig";
-  -o-font-feature-settings: "liga", "dlig";
-  font-feature-settings: "liga", "dlig"; }
-
 /******************************************************************
 Site Name: Squarehead
 Author: W.J. Levay
@@ -900,7 +880,7 @@ Here's a quick video to show how it works:
 http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
-.blue-btn, .comment-reply-link, #submit {
+.blue-btn {
   display: inline-block;
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -916,10 +896,10 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   cursor: pointer;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out; }
-  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+  .blue-btn:hover, .blue-btn:focus {
     color: white;
     text-decoration: none; }
-  .blue-btn:active, .comment-reply-link:active, #submit:active {
+  .blue-btn:active {
     top: 1px; }
 
 /*
@@ -927,11 +907,11 @@ An example button.
 You can use this example if you want. Just replace all the variables
 and it will create a button dependant on those variables.
 */
-.blue-btn, .comment-reply-link, #submit {
+.blue-btn {
   background-color: #2980b9; }
-  .blue-btn:hover, .comment-reply-link:hover, #submit:hover, .blue-btn:focus, .comment-reply-link:focus, #submit:focus {
+  .blue-btn:hover, .blue-btn:focus {
     background-color: #2574a8; }
-  .blue-btn:active, .comment-reply-link:active, #submit:active {
+  .blue-btn:active {
     background-color: #2472a4; }
 
 /******************************************************************
@@ -1381,7 +1361,7 @@ HEADER STYLES
   width: 131px;
   height: 181px;
   float: left;
-  margin-right: 3em; }
+  margin-right: 1.5em; }
 
 /*********************
 NAVIGATION STYLES
@@ -1420,6 +1400,7 @@ and more scalable.
     */ }
     .nav li a {
       display: block;
+      font-size: 90%;
       text-decoration: none;
       padding: 0.75em;
       /*
@@ -1431,14 +1412,15 @@ and more scalable.
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
       padding-left: 30px; }
+  .nav li.current-menu-item a,
+  .nav li.current_page_item a,
+  .nav li.current_page_ancestor a {
+    color: #ffca30; }
 
 /* end .nav */
 /*********************
 POSTS & CONTENT STYLES
 *********************/
-#content {
-  margin-top: 1.5em; }
-
 .home #content {
   position: absolute;
   top: 0;
@@ -1447,9 +1429,9 @@ POSTS & CONTENT STYLES
   margin-top: 0; }
 
 .hentry header {
-  padding: 1.5em; }
+  padding: 0; }
 .hentry footer {
-  padding: 1.5em; }
+  padding: 0; }
   .hentry footer p {
     margin: 0; }
 
@@ -1457,7 +1439,8 @@ POSTS & CONTENT STYLES
 .single-title,
 .page-title,
 .entry-title {
-  margin: 0; }
+  margin: 0;
+  display: none; }
 
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
@@ -1562,202 +1545,6 @@ POSTS & CONTENT STYLES
 .tags {
   margin: 0; }
 
-/******************************************************************
-PAGE NAVI STYLES
-******************************************************************/
-.pagination,
-.wp-prev-next {
-  margin: 1.5em 0; }
-
-.pagination {
-  text-align: center; }
-  .pagination ul {
-    display: inline-block;
-    background-color: white;
-    white-space: nowrap;
-    padding: 0;
-    clear: both;
-    border-radius: 3px; }
-  .pagination li {
-    padding: 0;
-    margin: 0;
-    float: left;
-    display: inline;
-    overflow: hidden;
-    border-right: 1px solid #eaedf2; }
-  .pagination a, .pagination span {
-    margin: 0;
-    text-decoration: none;
-    padding: 0;
-    line-height: 1em;
-    font-size: 1em;
-    font-weight: normal;
-    padding: 0.75em;
-    min-width: 1em;
-    display: block;
-    color: #2980b9; }
-    .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-      background-color: #2980b9;
-      color: white; }
-  .pagination .current {
-    cursor: default;
-    color: #323944; }
-    .pagination .current:hover, .pagination .current:focus {
-      background-color: white;
-      color: #323944; }
-
-/* end .bones_page_navi */
-/* fallback previous & next links */
-.wp-prev-next .prev-link {
-  float: left; }
-.wp-prev-next .next-link {
-  float: right; }
-
-/* end .wp-prev-next */
-/******************************************************************
-COMMENT STYLES
-******************************************************************/
-/* h3 comment title */
-#comments-title {
-  padding: 0.75em;
-  margin: 0;
-  border-top: 1px solid #f8f9fa;
-  /* number of comments span */ }
-
-.commentlist {
-  margin: 0;
-  list-style-type: none; }
-
-.comment {
-  position: relative;
-  clear: both;
-  overflow: hidden;
-  padding: 1.5em;
-  border-bottom: 1px solid #f8f9fa;
-  /* vcard */
-  /* end .commentlist .vcard */
-  /* end children */
-  /* general comment classes */ }
-  .comment .comment-author {
-    padding: 7px;
-    border: 0; }
-  .comment .vcard {
-    margin-left: 50px; }
-    .comment .vcard cite.fn {
-      font-weight: 700;
-      font-style: normal; }
-    .comment .vcard time {
-      display: block;
-      font-size: 0.9em;
-      font-style: italic; }
-      .comment .vcard time a {
-        color: #9fa6b4;
-        text-decoration: none; }
-        .comment .vcard time a:hover {
-          text-decoration: underline; }
-    .comment .vcard .avatar {
-      position: absolute;
-      left: 16px;
-      border-radius: 50%; }
-  .comment:last-child {
-    margin-bottom: 0; }
-  .comment .children {
-    margin: 0;
-    /* variations */
-    /* change number for different depth */ }
-  .comment[class*=depth-] {
-    margin-top: 1.1em; }
-  .comment.depth-1 {
-    margin-left: 0;
-    margin-top: 0; }
-  .comment:not(.depth-1) {
-    margin-top: 0;
-    margin-left: 7px;
-    padding: 7px; }
-  .comment.odd {
-    background-color: white; }
-  .comment.even {
-    background: #f8f9fa; }
-
-/* comment meta */
-/* comment content */
-.comment_content p {
-  margin: 0.7335em 0 1.5em;
-  font-size: 1em;
-  line-height: 1.5em; }
-
-/* end .commentlist .comment_content */
-/* comment reply link */
-.comment-reply-link {
-  font-size: 0.9em;
-  float: right; }
-
-/* end .commentlist .comment-reply-link */
-/* edit comment link */
-.comment-edit-link {
-  font-style: italic;
-  margin: 0 7px;
-  text-decoration: none;
-  font-size: 0.9em; }
-
-/******************************************************************
-COMMENT FORM STYLES
-******************************************************************/
-.comment-respond {
-  padding: 1.5em;
-  border-top: 1px solid #f8f9fa; }
-
-#reply-title {
-  margin: 0; }
-
-.logged-in-as {
-  color: #9fa6b4;
-  font-style: italic;
-  margin: 0; }
-  .logged-in-as a {
-    color: #323944; }
-
-.comment-form-comment {
-  margin: 1.5em 0 0.75em; }
-
-.form-allowed-tags {
-  padding: 1.5em;
-  background-color: #f8f9fa;
-  font-size: 0.9em; }
-
-/* comment submit button */
-#submit {
-  float: right;
-  font-size: 1em; }
-
-/* comment form title */
-#comment-form-title {
-  margin: 0 0 1.1em; }
-
-/* cancel comment reply link */
-/* logged in comments */
-/* allowed tags */
-#allowed_tags {
-  margin: 1.5em 10px 0.7335em 0; }
-
-/* no comments */
-.nocomments {
-  margin: 0 20px 1.1em; }
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
-.widget ul li {
-  /* deep nesting */ }
-
-.no-widgets {
-  background-color: white;
-  padding: 1.5em;
-  text-align: center;
-  border: 1px solid #cccccc;
-  border-radius: 2px;
-  margin-bottom: 1.5em; }
-
 /*********************
 FOOTER STYLES
 *********************/
@@ -1803,6 +1590,9 @@ tweeners.
   anymore, so just be aware that if you drop
   them in here, they won't work.
   */
+  /*********************
+  LAYOUT & GRID STYLES
+  *********************/
   /*********************
   NAVIGATION STYLES
   *********************/
@@ -1947,36 +1737,12 @@ you can add resource intensive styles.
 
   /* end .nav */
   /*********************
-  SIDEBARS & ASIDES
+  POSTS & CONTENT STYLES
   *********************/
-  .sidebar {
-    margin-top: 2.2em; }
+  /* entry content */
+  .entry-content {
+    margin: 0 22.25%; }
 
-  .widgettitle {
-    border-bottom: 2px solid #444;
-    margin-bottom: 0.75em; }
-
-  .widget {
-    padding: 0 10px;
-    margin: 2.2em 0; }
-    .widget ul li {
-      margin-bottom: 0.75em;
-      /* deep nesting */ }
-      .widget ul li ul {
-        margin-top: 0.75em;
-        padding-left: 1em; }
-
-  /* links widget */
-  /* meta widget */
-  /* pages widget */
-  /* recent-posts widget */
-  /* archives widget */
-  /* tag-cloud widget */
-  /* calendar widget */
-  /* category widget */
-  /* recent-comments widget */
-  /* search widget */
-  /* text widget */
   /*********************
   FOOTER STYLES
   *********************/
