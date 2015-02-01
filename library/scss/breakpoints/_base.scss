@@ -74,7 +74,7 @@ LAYOUT & GRID STYLES
 
 .wrap {
 	width: 96%;
-	margin: 0 auto;
+	margin: 0 0 0 3em;
 }
 
 /* Sticky Footer via: http://mystrd.at/modern-clean-css-sticky-footer/ */
@@ -535,7 +535,10 @@ FOOTER STYLES
 }
 
 
-	.copyright {text-align: right;}
+	.copyright {
+		font-size: 0.8em;
+		text-align: right;
+	}
 
 
 /*********************
