@@ -41,12 +41,10 @@ NAVIGATION STYLES
 
 .nav {
 	border: 0;
-	ul {
-		margin-top: 0;
-	}
+	margin-top: -1.5em;
+
 	li {
 		float: left;
-		position: relative;
 
 		a {
 			border-bottom: 0;
